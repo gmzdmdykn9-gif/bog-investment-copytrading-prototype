@@ -1,0 +1,733 @@
+/* ==========================================================================
+   BOG Investment / Copy Trading — Static Prototype
+   Shared stylesheet — used by every screen in screens/
+   ========================================================================== */
+
+:root {
+  --text-primary: #1b1c1d;
+  --text-secondary: #515457;
+  --text-accent: #ff5c0a;
+  --text-accent-strong: #8f3700;
+  --text-white: #ffffff;
+  --text-disabled: #aaadb0;
+  --text-error: #da1e28;
+  --text-success: #198038;
+
+  --layer-01: #ffffff;
+  --layer-02: #f7f7f8;
+  --layer-alpha-01: rgba(108, 112, 117, 0.06);
+  --layer-alpha-02: rgba(108, 112, 117, 0.1);
+
+  --border-01: #d7d9db;
+  --border-02: #aaadb0;
+  --border-03: #e5e6e7;
+  --border-alpha-01: rgba(108, 112, 117, 0.12);
+
+  --button-primary: #ff5c0a;
+  --button-secondary: rgba(255, 92, 10, 0.08);
+  --button-secondary-grey: rgba(108, 112, 117, 0.1);
+  --button-black: #1b1c1d;
+
+  --status-error: #da1e28;
+  --status-success: #198038;
+  --status-accent-01: #fff3ed;
+  --chip-selected: #ffe0d0;
+  --chip-default: rgba(255, 255, 255, 0);
+
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-default: 16px;
+  --radius-full: 10000px;
+
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 12px;
+  --space-default: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+
+  --font-family: -apple-system, "SF Pro Display", "Helvetica Neue", "Noto Sans Georgian", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #e9eaec;
+  font-family: var(--font-family);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.prototype-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* ---------------------------------------------------------------------- */
+/* Phone frame                                                            */
+/* ---------------------------------------------------------------------- */
+
+.device {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background: var(--layer-01);
+  border-radius: 40px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 2px 0 rgba(0,0,0,0.04);
+  overflow: hidden;
+  border: 8px solid #111;
+}
+
+.device-screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--layer-01);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.device-screen::-webkit-scrollbar { display: none; }
+
+.prototype-note {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  font-size: 12px;
+  color: #6c7075;
+  background: rgba(255,255,255,0.85);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-family: var(--font-family);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Navigation Bar                                                         */
+/* ---------------------------------------------------------------------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--layer-01);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar .title {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navbar .icon-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--button-secondary-grey);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+.icon-btn svg { width: 16px; height: 16px; }
+.icon-btn:hover { filter: brightness(0.95); }
+
+/* ---------------------------------------------------------------------- */
+/* Tab Bar                                                                */
+/* ---------------------------------------------------------------------- */
+
+.tabbar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 4px 20px;
+  background: rgba(248,248,248,0.85);
+  backdrop-filter: blur(12px);
+  border-top: 0.5px solid rgba(0,0,0,0.06);
+  margin-top: auto;
+}
+
+.tabbar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px 7px;
+  border-radius: 100px;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+}
+
+.tabbar a svg { width: 24px; height: 24px; }
+.tabbar a span { font-size: 8px; letter-spacing: -0.1px; }
+.tabbar a.active { background: #ededed; }
+.tabbar a.active span { font-weight: 600; }
+
+/* ---------------------------------------------------------------------- */
+/* Layout helpers                                                         */
+/* ---------------------------------------------------------------------- */
+
+.screen-content {
+  padding: 24px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.section-header .section-title {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  color: var(--text-primary);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Amount display                                                         */
+/* ---------------------------------------------------------------------- */
+
+.amount-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+}
+
+.amount-hero .amount-value {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 44px;
+  color: var(--text-primary);
+}
+
+.amount-badges { display: flex; flex-direction: column; gap: 4px; }
+.badge-line { display: flex; align-items: center; gap: 2px; font-size: 12px; font-weight: 600; }
+.badge-line.down { color: var(--text-error); }
+.badge-line.up { color: var(--text-success); }
+.badge-line .muted { color: var(--text-secondary); margin-left: 4px; font-weight: 600; }
+
+/* ---------------------------------------------------------------------- */
+/* Segmented control                                                      */
+/* ---------------------------------------------------------------------- */
+
+.segmented {
+  display: flex;
+  background: var(--layer-alpha-01);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 2px;
+}
+
+.segmented button, .segmented a {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 4px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: center;
+}
+
+.segmented button.active, .segmented a.active {
+  background: var(--layer-01);
+  border: 0.5px solid var(--border-01);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Chart placeholder                                                     */
+/* ---------------------------------------------------------------------- */
+
+.chart-area {
+  width: 100%;
+  height: 150px;
+  margin: -8px 0;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Banner / carousel                                                      */
+/* ---------------------------------------------------------------------- */
+
+.banner-card {
+  width: 100%;
+  max-width: 343px;
+  height: 138px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #cfd3d6;
+}
+.banner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.dot-indicator {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+.dot-indicator span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--border-02);
+}
+.dot-indicator span.active { width: 14px; background: var(--text-accent); }
+
+/* ---------------------------------------------------------------------- */
+/* List item                                                              */
+/* ---------------------------------------------------------------------- */
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: left;
+}
+
+.list-item .icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: var(--layer-alpha-02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+.list-item .icon-circle svg { width: 20px; height: 20px; }
+.list-item .icon-circle.outline { background: transparent; border: 0.5px solid var(--border-03); }
+.list-item .icon-circle img { width: 100%; height: 100%; object-fit: cover; border-radius: 100px; }
+
+.list-item .text-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.list-item .text-col .primary { font-size: 15px; font-weight: 500; color: var(--text-primary); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list-item .text-col .secondary { font-size: 12px; color: var(--text-secondary); }
+
+.list-item .right-col { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.list-item .right-col .amount { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.list-item .chevron { width: 16px; height: 16px; color: var(--text-secondary); }
+.list-item + .list-item { border-top: 0.5px solid var(--border-alpha-01); }
+
+.list-divider { height: 0.5px; background: var(--border-alpha-01); width: 100%; }
+.date-label { font-size: 12px; font-weight: 500; color: var(--text-primary); padding: 4px 0; }
+
+/* ---------------------------------------------------------------------- */
+/* Buttons                                                                */
+/* ---------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary { background: var(--button-primary); color: var(--text-white); }
+.btn-secondary { background: var(--button-secondary); color: var(--text-accent); }
+.btn-secondary-grey { background: var(--button-secondary-grey); color: var(--text-primary); }
+.btn-black { background: var(--button-black); color: var(--text-white); }
+.btn-outline { background: transparent; border: 1px solid var(--border-02); color: var(--text-primary); }
+.btn-small { height: 32px; padding: 0 16px; width: auto; border-radius: 100px; font-size: 14px; }
+
+.sticky-bar {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 16px 24px;
+  background: var(--layer-01);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Chips                                                                  */
+/* ---------------------------------------------------------------------- */
+
+.chip-row { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; }
+.chip {
+  display: flex; align-items: center; gap: 4px;
+  padding: 4px 8px; border-radius: 8px; font-size: 14px; font-weight: 600;
+  white-space: nowrap; flex-shrink: 0; cursor: pointer;
+  border: 1px solid var(--border-02); color: var(--text-primary); background: var(--chip-default);
+}
+.chip.selected { background: var(--chip-selected); border-color: transparent; color: var(--text-accent-strong); }
+.chip svg { width: 16px; height: 16px; }
+
+/* ---------------------------------------------------------------------- */
+/* Action items / product grid                                           */
+/* ---------------------------------------------------------------------- */
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+}
+
+.action-item .icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 100px;
+  background: var(--button-secondary-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+.action-item .icon-circle svg { width: 24px; height: 24px; }
+.action-item span { font-size: 14px; color: var(--text-primary); }
+.action-item .badge-new {
+  position: absolute; top: -4px; right: 6px;
+  background: #d0f6b6; color: #305e12;
+  font-size: 11px; font-weight: 700;
+  padding: 2px 4px; border-radius: 10000px;
+}
+
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; width: 100%; }
+.product-card {
+  background: var(--layer-02);
+  border-radius: 16px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 155px;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+}
+.product-card .icon-wrap {
+  width: 56px; height: 56px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+.product-card .label { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.product-card .value { font-size: 18px; font-weight: 600; color: var(--text-primary); }
+
+/* ---------------------------------------------------------------------- */
+/* Investment product cards (wide)                                       */
+/* ---------------------------------------------------------------------- */
+
+.invest-card {
+  background: var(--layer-02);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+.invest-card .label { font-size: 12px; font-weight: 600; color: #6c7075; }
+.invest-card .value { font-size: 24px; font-weight: 600; color: var(--text-primary); display: flex; gap: 4px; align-items: baseline; }
+.invest-card .value .currency { font-size: 20px; }
+.invest-card .illustration { width: 64px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 32px; }
+
+/* ---------------------------------------------------------------------- */
+/* Donut chart (portfolio)                                                */
+/* ---------------------------------------------------------------------- */
+
+.donut-wrap { display: flex; align-items: center; justify-content: center; position: relative; margin: 8px 0; }
+.donut-center {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 600; color: var(--text-primary);
+}
+.donut-label {
+  position: absolute;
+  background: #e5e6e7cc;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 100px;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Inline message / cards                                                */
+/* ---------------------------------------------------------------------- */
+
+.inline-card {
+  background: var(--layer-02);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+.inline-card h3 { margin: 0; font-size: 15px; font-weight: 600; }
+.inline-card p { margin: 0; font-size: 13px; color: var(--text-secondary); line-height: 18px; }
+.inline-card .close-x {
+  position: absolute; top: 12px; right: 12px;
+  width: 24px; height: 24px; border-radius: 100px;
+  background: var(--layer-01); display: flex; align-items: center; justify-content: center;
+  border: none; cursor: pointer;
+}
+.inline-card .close-x svg { width: 12px; height: 12px; }
+
+/* ---------------------------------------------------------------------- */
+/* Requirement / checklist rows                                          */
+/* ---------------------------------------------------------------------- */
+
+.req-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--border-alpha-01);
+}
+.req-row:last-child { border-bottom: none; }
+.req-row .req-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin: 0 0 4px; }
+.req-row .req-sub { font-size: 13px; color: var(--text-secondary); margin: 0; }
+.req-row .check { width: 22px; height: 22px; border-radius: 100px; background: var(--status-success); color: #fff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.req-row .check svg { width: 12px; height: 12px; }
+
+/* ---------------------------------------------------------------------- */
+/* Form fields (portfolio name screen)                                   */
+/* ---------------------------------------------------------------------- */
+
+.form-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0 16px;
+  border-bottom: 0.5px solid var(--border-alpha-01);
+}
+.form-field .icon-circle { width: 40px; height: 40px; border-radius: 100px; background: var(--layer-alpha-02); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.form-field .icon-circle svg { width: 18px; height: 18px; }
+.form-field .field-text { flex: 1; }
+.form-field .field-label { font-size: 12px; color: var(--text-secondary); }
+.form-field .field-value { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+
+.toggle {
+  width: 48px; height: 28px; border-radius: 100px;
+  background: var(--border-02);
+  position: relative;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .15s ease;
+}
+.toggle::after {
+  content: '';
+  position: absolute;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #fff;
+  top: 2px; left: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  transition: left .15s ease;
+}
+.toggle.on { background: var(--text-accent); }
+.toggle.on::after { left: 22px; }
+
+.description-text { font-size: 14px; color: var(--text-secondary); line-height: 20px; }
+
+.checkbox-row { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-primary); }
+.checkbox-row input { width: 18px; height: 18px; }
+.checkbox-row a { color: var(--text-accent); text-decoration: underline; }
+
+/* ---------------------------------------------------------------------- */
+/* Portfolio action rows (buy/sell list)                                  */
+/* ---------------------------------------------------------------------- */
+
+.asset-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; }
+.asset-row .logo { width: 36px; height: 36px; border-radius: 100px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; flex-shrink: 0; }
+.asset-row .text-col { flex: 1; }
+.asset-row .ticker { font-size: 15px; font-weight: 600; }
+.asset-row .pct { font-size: 12px; color: var(--text-secondary); }
+.asset-row .right-col { text-align: right; }
+.asset-row .price { font-size: 14px; font-weight: 600; }
+.asset-row .change { font-size: 12px; font-weight: 600; }
+.asset-row .change.up { color: var(--text-success); }
+.asset-row .change.down { color: var(--text-error); }
+
+.buy-sell-row { display: flex; gap: 8px; width: 100%; }
+.buy-sell-row .btn { flex: 1; }
+.btn-buy { background: var(--status-accent-01); color: var(--text-accent); }
+.btn-sell { background: var(--layer-alpha-02); color: var(--text-primary); }
+
+/* ---------------------------------------------------------------------- */
+/* Bottom sheet (Settings screen)                                        */
+/* ---------------------------------------------------------------------- */
+
+.sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 40;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bottom-sheet {
+  background: var(--layer-01);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  padding: 12px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bottom-sheet .grabber { width: 36px; height: 4px; background: var(--border-02); border-radius: 100px; margin: 0 auto 8px; }
+.bottom-sheet .sheet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.bottom-sheet .sheet-header h3 { margin: 0; font-size: 16px; font-weight: 600; }
+.sheet-row {
+  display: flex; align-items: center; gap: 12px; padding: 12px 0;
+  cursor: pointer; border: none; background: none; width: 100%; text-align: left;
+}
+.sheet-row .icon-circle { width: 36px; height: 36px; border-radius: 100px; background: var(--layer-alpha-01); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sheet-row .icon-circle svg { width: 18px; height: 18px; }
+.sheet-row span { flex: 1; font-size: 15px; color: var(--text-primary); }
+.sheet-row.danger span { color: var(--text-error); }
+
+/* ---------------------------------------------------------------------- */
+/* Promo screen (onboarding style)                                        */
+/* ---------------------------------------------------------------------- */
+
+.promo-screen {
+  background: linear-gradient(180deg, #f2f2f3 0%, #e9eaec 60%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.promo-close {
+  margin: 16px;
+  width: 32px; height: 32px; border-radius: 100px;
+  background: rgba(0,0,0,0.06);
+  border: none; display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.promo-mock {
+  margin: 0 auto;
+  width: 220px;
+  border: 8px solid #1b1c1d;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.promo-mock .mock-statusbar { display: flex; justify-content: space-between; font-size: 10px; padding: 6px 10px 2px; }
+.promo-mock .mock-nav { display: flex; align-items: center; gap: 8px; padding: 6px 10px; font-size: 11px; font-weight: 600; }
+.promo-mock .mock-search { margin: 6px 10px; background: #f2f2f3; border-radius: 8px; padding: 6px 8px; font-size: 9px; color: #888; }
+.promo-mock .mock-segmented { display: flex; gap: 4px; margin: 6px 10px; }
+.promo-mock .mock-segmented span { flex: 1; text-align: center; font-size: 8px; padding: 4px; border-radius: 6px; background: #f2f2f3; }
+.promo-mock .mock-segmented span.active { background: #fff; border: 1px solid #ddd; font-weight: 600; }
+.promo-mock .mock-list { padding: 4px 10px 12px; display: flex; gap: 8px; }
+.promo-mock .mock-list .mock-card { flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 6px; font-size: 8px; }
+.promo-mock .mock-list .mock-avatar { width: 20px; height: 20px; border-radius: 50%; background: #ddd; margin-bottom: 4px; }
+.promo-body { text-align: center; padding: 24px 32px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.promo-body h2 { font-size: 22px; margin: 0; }
+.promo-body p { font-size: 14px; color: var(--text-secondary); line-height: 20px; margin: 0; }
+
+/* ---------------------------------------------------------------------- */
+/* Search input                                                          */
+/* ---------------------------------------------------------------------- */
+
+.search-input {
+  background: var(--layer-alpha-01);
+  border-radius: 12px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+.search-input svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ---------------------------------------------------------------------- */
+/* Misc                                                                   */
+/* ---------------------------------------------------------------------- */
+
+.avatar-row { display: flex; align-items: center; gap: 12px; padding: 16px; border: 1px solid rgba(108,112,117,0.12); border-radius: 16px; }
+.avatar-row .avatar { width: 48px; height: 48px; border-radius: 100px; overflow: hidden; flex-shrink: 0; background: #ddd; }
+.avatar-row .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-row .info { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.avatar-row .name { font-size: 16px; font-weight: 600; }
+.avatar-row .plan-badge { display: inline-flex; align-self: flex-start; background: var(--status-accent-01); color: var(--text-accent); font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 100px; }
+
+.story-row { display: flex; gap: 8px; overflow-x: auto; padding: 16px 16px 0; }
+.story-card {
+  flex-shrink: 0; width: 100px; height: 112px; border-radius: 12px;
+  display: flex; align-items: flex-end; padding: 8px; color: #fff; font-size: 12px; font-weight: 700;
+  background-size: cover; background-position: center;
+}
+
+.divider-line { height: 0.5px; background: var(--border-alpha-01); width: 100%; margin: 4px 0; }
+
+.text-secondary { color: var(--text-secondary); }
+.w-full { width: 100%; }

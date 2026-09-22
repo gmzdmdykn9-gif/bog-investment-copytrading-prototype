@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOG — დამატებითი ფუნქციები</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="prototype-body">
+<div class="device">
+  <div class="device-screen" style="overflow:hidden;">
+
+    <div class="navbar">
+      <a class="icon-btn" href="investment.html" title="უკან">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4L7 12l8 8"/></svg>
+      </a>
+      <div class="title">მაღალრისკიანი</div>
+      <div class="icon-actions">
+        <a class="icon-btn" href="settings.html" title="მეტი">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="icon-btn" href="hub.html" title="ჩატი">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="screen-content" style="padding-top:24px; filter:blur(1px); opacity:.5;">
+      <div class="donut-wrap">
+        <svg width="220" height="220" viewBox="0 0 220 220">
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#8b7ae8" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="0" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#e05a5a" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-125.6" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#d9b35a" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-251.2" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#c98a55" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-376.8" transform="rotate(-90 110 110)"/>
+        </svg>
+        <div class="donut-center">100.00 $</div>
+        <div class="donut-label" style="top:6px; left:0;">25% GOOG</div>
+        <div class="donut-label" style="top:6px; right:0;">25% QQQ</div>
+        <div class="donut-label" style="bottom:6px; left:0;">25% META</div>
+        <div class="donut-label" style="bottom:6px; right:0;">25% AMZN</div>
+      </div>
+      <div class="inline-card">
+        <h3>პორტფელის გასაჯაროება</h3>
+        <p>The card component groups related information into a container and presents clear content</p>
+      </div>
+    </div>
+
+    <div class="sheet-backdrop">
+      <div class="bottom-sheet">
+        <div class="grabber"></div>
+        <div class="sheet-header">
+          <h3>დამატებითი ფუნქციები</h3>
+          <a class="icon-btn" href="portfolio.html" title="დახურვა">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </a>
+        </div>
+
+        <a class="sheet-row" href="screen-1.html">
+          <div class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+          <span>პორტფელის გასაჯაროება</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </a>
+
+        <a class="sheet-row" href="portfolio.html">
+          <div class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.3 10.7l7.4-4.4M8.3 13.3l7.4 4.4"/></svg></div>
+          <span>პორტფელის გაზიარება</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </a>
+
+        <a class="sheet-row" href="portfolio.html">
+          <div class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h13"/><circle cx="16" cy="6" r="2"/><circle cx="8" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+          <span>თანხის განაწილების შეცვლა</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </a>
+
+        <a class="sheet-row" href="screen-2.html">
+          <div class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 5l3 3"/></svg></div>
+          <span>სახელის და ფოტოს შეცვლა</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </a>
+
+        <a class="sheet-row danger" href="portfolio.html">
+          <div class="icon-circle"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#da1e28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg></div>
+          <span>პორტფელის წაშლა</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4l8 8-8 8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

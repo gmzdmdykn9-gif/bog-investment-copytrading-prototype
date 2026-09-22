@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOG — მაღალრისკიანი</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="prototype-body">
+<div class="device">
+  <div class="device-screen">
+
+    <div class="navbar">
+      <a class="icon-btn" href="investment.html" title="უკან">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4L7 12l8 8"/></svg>
+      </a>
+      <div class="title">მაღალრისკიანი</div>
+      <div class="icon-actions">
+        <a class="icon-btn" href="settings.html" title="მეტი">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="icon-btn" href="hub.html" title="ჩატი">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4V4z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="screen-content" style="padding-top:24px;">
+
+      <div class="donut-wrap">
+        <svg width="220" height="220" viewBox="0 0 220 220">
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#8b7ae8" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="0" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#e05a5a" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-125.6" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#d9b35a" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-251.2" transform="rotate(-90 110 110)"/>
+          <circle cx="110" cy="110" r="80" fill="none" stroke="#c98a55" stroke-width="34" stroke-dasharray="125.6 376.8" stroke-dashoffset="-376.8" transform="rotate(-90 110 110)"/>
+        </svg>
+        <div class="donut-center">100.00 $</div>
+        <div class="donut-label" style="top:6px; left:0;">25% GOOG</div>
+        <div class="donut-label" style="top:6px; right:0;">25% QQQ</div>
+        <div class="donut-label" style="bottom:6px; left:0;">25% META</div>
+        <div class="donut-label" style="bottom:6px; right:0;">25% AMZN</div>
+      </div>
+
+      <div class="inline-card">
+        <button class="close-x" onclick="this.closest('.inline-card').style.display='none'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <h3>პორტფელის გასაჯაროება</h3>
+        <p>The card component groups related information into a container and presents clear content</p>
+        <a class="btn btn-primary" style="width:auto; align-self:flex-start; padding:0 20px;" href="screen-1.html">გაიგე მეტი</a>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-title" style="display:flex; align-items:center; gap:4px;">
+            აქციები
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+          </div>
+          <div class="segmented" style="width:120px; flex:none;">
+            <a href="#" class="active">24 სთ</a>
+            <a href="#">სულ</a>
+          </div>
+        </div>
+
+        <div class="asset-row">
+          <div class="logo" style="background:#e05a5a;">Q</div>
+          <div class="text-col">
+            <div class="ticker">QQQ</div>
+            <div class="pct">25 % | 25 %</div>
+          </div>
+          <div class="right-col">
+            <div class="price">25.00 $</div>
+            <div class="change down">▼ 1.00$ (14.00%)</div>
+          </div>
+        </div>
+        <div class="asset-row">
+          <div class="logo" style="background:#1b1c1d;">A</div>
+          <div class="text-col">
+            <div class="ticker">AMZN</div>
+            <div class="pct">25 % | 22 %</div>
+          </div>
+          <div class="right-col">
+            <div class="price">25.00 $</div>
+            <div class="change down">▼ 1.00$ (14.00%)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sticky-bar">
+      <div class="buy-sell-row">
+        <button class="btn btn-buy">ყიდვა</button>
+        <button class="btn btn-sell">გაყიდვა</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
