@@ -3,6 +3,63 @@
    Shared stylesheet — used by every screen in screens/
    ========================================================================== */
 
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-Light.woff2") format("woff2"),
+       url("assets/fonts/BOG-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-Regular.woff2") format("woff2"),
+       url("assets/fonts/BOG-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-Medium.woff2") format("woff2"),
+       url("assets/fonts/BOG-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-SemiBold.woff2") format("woff2"),
+       url("assets/fonts/BOG-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-Bold.woff2") format("woff2"),
+       url("assets/fonts/BOG-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-Black.woff2") format("woff2"),
+       url("assets/fonts/BOG-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BOG";
+  src: url("assets/fonts/BOG-UltraBold.woff2") format("woff2"),
+       url("assets/fonts/BOG-UltraBold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --text-primary: #1b1c1d;
   --text-secondary: #515457;
@@ -47,7 +104,7 @@
   --space-l: 24px;
   --space-xl: 32px;
 
-  --font-family: -apple-system, "SF Pro Display", "Helvetica Neue", "Noto Sans Georgian", Arial, sans-serif;
+  --font-family: "BOG", -apple-system, "Helvetica Neue", "Noto Sans Georgian", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
